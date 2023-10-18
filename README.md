@@ -33,9 +33,9 @@
 Скришот где видно что в кластере установлена политика обработки очередей ha-all (все очереди реплицируются между нодами):  
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_2.PNG)  
 Добаваление пользователя и назначение тега, если тег не админ, то в UI может отображаться не вся информация:  
-# create a user  
+create a user  
 `rabbitmqctl add_user *username* *password*`  
-# tag the user with "administrator" for full management UI and HTTP API access  
+tag the user with "administrator" for full management UI and HTTP API access  
 `rabbitmqctl set_user_tags *username* administrator`  
 Также приложите вывод команды с двух нод:  
 `$ rabbitmqctl cluster_status`  

@@ -28,10 +28,15 @@
 `rabbitmqctl start_app`  
 `rabbitmqctl cluster_status`  
 В качестве решения домашнего задания приложите скриншоты из веб-интерфейса с информацией о доступных нодах в кластере и включённой политикой.  
-Скришот где видно что в кластере 2 ноды:  
+Скришот где видно что в кластере 2 ноды (чтобы в UI отображалась информация о нодах, пользователь должен быть с тегом administrator:  
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_1.PNG)  
 Скришот где видно что в кластере установлена политика обработки очередей ha-all (все очереди реплицируются между нодами):  
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_2.PNG)  
+Добаваление пользователя и назначение тега, если тег не админ, то в UI может отображаться не вся информация:  
+# create a user  
+`rabbitmqctl add_user *username* *password*`  
+# tag the user with "administrator" for full management UI and HTTP API access  
+`rabbitmqctl set_user_tags *username* administrator`  
 Также приложите вывод команды с двух нод:  
 `$ rabbitmqctl cluster_status`  
 Скриншот вывода на ноде Deb-x64:  

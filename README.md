@@ -18,8 +18,15 @@
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z2_2.PNG)  
 
 ### Задание 3 Подготовка HA кластера  
-Используя Vagrant или VirtualBox, создайте вторую виртуальную машину и установите RabbitMQ. Добавьте в файл hosts название и IP-адрес каждой машины, чтобы машины могли видеть друг друга по имени.  
+Используя Vagrant или VirtualBox, создайте вторую виртуальную машину и установите RabbitMQ. Добавьте в файл hosts название и IP-адрес каждой машины, чтобы машины могли видеть друг друга по имени. 
 Затем объедините две машины в кластер и создайте политику ha-all на все очереди.  
+Политику создаем командой:  
+`rabbitmqctl set_policy ha-all ""  '{"ha-mode":"all","ha-sync-mode":"automatic"}'`  
+В кластер объединяем командами:
+`rabbitmqctl stop_app`
+`rabbitmqctl join_cluster {ip_addr or dns name another rbmq server}`
+`rabbitmqctl start_app`
+`rabbitmqctl cluster_status`
 В качестве решения домашнего задания приложите скриншоты из веб-интерфейса с информацией о доступных нодах в кластере и включённой политикой.  
 Скришот где видно что в кластере 2 ноды:  
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_1.PNG)  

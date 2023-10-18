@@ -13,31 +13,31 @@
 В качестве решения домашнего задания приложите оба скриншота, сделанных на этапе выполнения.  
 Для закрепления материала можете попробовать модифицировать скрипты, чтобы поменять название очереди и отправляемое сообщение.  
 Скриншот, где видно обзор очереди с именем hello (результат выполнения скрипта producer.py, который подключается к серверу rabbitmq и создает очередь и записывает в неё сообщение):  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z2_1.PNG]  
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z2_1.PNG)  
 Скриншот, где видно результат выполнения скрипта consumer.py (скрипт получает сообщения из очереди и выводит их на экран):  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z2_2.PNG]  
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z2_2.PNG)  
 
 ### Задание 3 Подготовка HA кластера  
 Используя Vagrant или VirtualBox, создайте вторую виртуальную машину и установите RabbitMQ. Добавьте в файл hosts название и IP-адрес каждой машины, чтобы машины могли видеть друг друга по имени.  
 Затем объедините две машины в кластер и создайте политику ha-all на все очереди.  
 В качестве решения домашнего задания приложите скриншоты из веб-интерфейса с информацией о доступных нодах в кластере и включённой политикой.  
 Скришот где видно что в кластере 2 ноды:  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z3_1.PNG]  
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_1.PNG)  
 Скришот где видно что в кластере установлена политика обработки очередей ha-all (все очереди реплицируются между нодами):  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z3_2.PNG]  
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_2.PNG)  
 Также приложите вывод команды с двух нод:  
 `$ rabbitmqctl cluster_status`  
 Скриншот вывода на ноде Deb-x64:  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z3_3.PNG]  
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_3.PNG)  
 Скриншот вывода на ноде Deb-x64-hw02:  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z3_4.PNG]  
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_4.PNG)  
 Для закрепления материала снова запустите скрипт producer.py и приложите скриншот выполнения команды на каждой из нод:  
 `$ rabbitmqadmin get queue='hello'`  
 Скриншот вывода на ноде Deb-x64:  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z3_5.PNG]  
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_5.PNG)  
 Скриншот вывода на ноде Deb-x64-hw02:  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z3_6.PNG] 
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_6.PNG) 
 После чего попробуйте отключить одну из нод, желательно ту, к которой подключались из скрипта, затем поправьте параметры подключения в скрипте consumer.py на вторую ноду и запустите его.  
 Приложите скриншот результата работы второго скрипта.  
 Скриншот выполнения скрипта consumer.py после отключения одной ноды (как видно скрипт успешно сообщение из очереди на второй ноде, так же видно что кластер не работает):  
-!()[https://github.com/Svalker1989/rabbitmq/blob/main/Z3_7.PNG] 
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_7.PNG) 

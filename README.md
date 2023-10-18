@@ -22,11 +22,11 @@
 Затем объедините две машины в кластер и создайте политику ha-all на все очереди.  
 Политику создаем командой:  
 `rabbitmqctl set_policy ha-all ""  '{"ha-mode":"all","ha-sync-mode":"automatic"}'`  
-В кластер объединяем командами:
-`rabbitmqctl stop_app`
-`rabbitmqctl join_cluster {ip_addr or dns name another rbmq server}`
-`rabbitmqctl start_app`
-`rabbitmqctl cluster_status`
+В кластер объединяем командами:  
+`rabbitmqctl stop_app`  
+`rabbitmqctl join_cluster {ip_addr or dns name another rbmq server}`  
+`rabbitmqctl start_app`  
+`rabbitmqctl cluster_status`  
 В качестве решения домашнего задания приложите скриншоты из веб-интерфейса с информацией о доступных нодах в кластере и включённой политикой.  
 Скришот где видно что в кластере 2 ноды:  
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_1.PNG)  

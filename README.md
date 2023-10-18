@@ -32,13 +32,6 @@
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_1.PNG)  
 Скришот где видно что в кластере установлена политика обработки очередей ha-all (все очереди реплицируются между нодами):  
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_2.PNG)  
-Добаваление пользователя и назначение тега, если тег не админ, то в UI может отображаться не вся информация:  
-create a user  
-`rabbitmqctl add_user *username* *password*`  
-tag the user with "administrator" for full management UI and HTTP API access  
-`rabbitmqctl set_user_tags *username* administrator`  
-Также приложите вывод команды с двух нод:  
-`$ rabbitmqctl cluster_status`  
 Скриншот вывода на ноде Deb-x64:  
 ![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_3.PNG)  
 Скриншот вывода на ноде Deb-x64-hw02:  
@@ -52,4 +45,11 @@ tag the user with "administrator" for full management UI and HTTP API access
 После чего попробуйте отключить одну из нод, желательно ту, к которой подключались из скрипта, затем поправьте параметры подключения в скрипте consumer.py на вторую ноду и запустите его.  
 Приложите скриншот результата работы второго скрипта.  
 Скриншот выполнения скрипта consumer.py после отключения одной ноды (как видно скрипт успешно сообщение из очереди на второй ноде, так же видно что кластер не работает):  
-![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_7.PNG) 
+![](https://github.com/Svalker1989/rabbitmq/blob/main/Z3_7.PNG)   
+Добаваление пользователя и назначение тега, если тег не админ, то в UI может отображаться не вся информация:  
+create a user  
+`rabbitmqctl add_user *username* *password*`  
+tag the user with "administrator" for full management UI and HTTP API access  
+`rabbitmqctl set_user_tags *username* administrator`  
+Также приложите вывод команды с двух нод:  
+`$ rabbitmqctl cluster_status`  

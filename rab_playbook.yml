@@ -1,0 +1,19 @@
+---
+- name: prepare
+  hosts: all
+  gather_facts: no  # не используем сбор фактов для ускорения выполнения
+  tasks:
+    - name: update apt cache
+      block:
+        - name: update apt cache
+          apt:
+            update_cache: yes
+        - name: perform upgrade of all packages to the latest version
+          apt:
+            upgrade: dist
+            force_apt_get: yes
+    - name: install python pika
+      pip:
+        name:
+          - pika
+        executable: pip3

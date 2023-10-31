@@ -53,3 +53,11 @@ tag the user with "administrator" for full management UI and HTTP API access
 `rabbitmqctl set_user_tags *username* administrator`  
 Также приложите вывод команды с двух нод:  
 `$ rabbitmqctl cluster_status`  
+### Задание 4 Ansible playbook  
+Напишите плейбук, который будет производить установку RabbitMQ на любое количество нод и объединять их в кластер. При этом будет автоматически создавать политику ha-all.  
+Готовый плейбук разместите в своём репозитории.  
+Playbook file
+[](https://github.com/Svalker1989/rabbitmq/blob/main/rab_playbook.yml)
+P.S. Таски брал из `https://github.com/IronCore864/ansible-rabbitmq-cluster/tree/master`  
+Лучше и удобнее всё делать с помощью ansible role.  
+Файл `erlang.cookie.j2` содержит куки для хостов кластера.  

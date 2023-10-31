@@ -3,7 +3,7 @@
 import pika
 
 credentials = pika.PlainCredentials('str', 'qwerty')
-connection = pika.BlockingConnection(pika.ConnectionParameters('192.168.0.148',5672,'/',credentials))
+connection = pika.BlockingConnection(pika.ConnectionParameters('192.168.0.174',5672,'/',credentials))
 channel = connection.channel()
 channel.queue_declare(queue='hello')
 

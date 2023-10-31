@@ -1,5 +1,10 @@
+#[server2]
+#str@192.168.0.148
 [server1]
-str@192.168.0.174
+str@192.168.0.114
+
+
+
 
 #[all:vars]
 #ansible_python_interpreter=/usr/bin/python3
